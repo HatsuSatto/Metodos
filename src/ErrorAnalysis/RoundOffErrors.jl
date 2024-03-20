@@ -20,9 +20,4 @@ function approximated_value_interval_given_relative_error(
     min_value = x - relative_error*abs(x)
     max_value = x - relative_error*abs(x)
 
-    if value > 0
-        # implement the approximated interval given relative error, case value > 0
-    end
-   
-    # implement the approximated interval given relative error, case value < 0
 end
