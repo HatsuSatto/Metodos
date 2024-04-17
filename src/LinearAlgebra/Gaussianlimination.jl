@@ -11,7 +11,7 @@ function solve_system(matrix_A::Matrix{Float64}, vector_b::Vector{Float64})
     
     n = length(vector_b)
 
-    dimension_faiture(A,n) && return
+    dimension_faiture(matrix_A,n) && return
 
     A = [copy(matrix_A) copy(vector_b)]
 
@@ -70,10 +70,10 @@ function solve_system(matrix_A::Matrix{Float64}, vector_b::Vector{Float64})
     for i = n-1:-1:1
         soma=0
         for j = i+1:n
-            soma += A[i,j]^x[j]
+            soma += A[i,j]*x[j]
         end
 
-        x[i]=(A{1,n+1} - soma)/A{i,i}
+        x[i]=(A[1,n+1] - soma)/A[i,i]
     end
 
     return x
